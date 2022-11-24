@@ -1,0 +1,8 @@
+#   APLICATIVO:VERSÃO
+FROM python:3.12.0a2-bullseye
+ENV PYTHONUNBUFFERED=1
+#   APONTA O DIRETÓRIO OU CRIA CASO NÃO EXISTA
+WORKDIR /app
+#   COPIA OS REQUERIMENTOS PARA O PROJETO E INSTALA
+COPY . /app
+RUN pip install --no-cache-dir -r requirements.txt

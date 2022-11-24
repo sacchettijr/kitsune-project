@@ -1,0 +1,79 @@
+{% extends 'base/base_interno.html' %}
+{% load static %}
+
+{% block baseInterno %}
+<h1 class="mt-4">Início</h1>
+<table id="tabelaJogo" class="display">
+    <thead>
+        <th class="text-center">ID</th>
+        <th class="text-center">NOME</th>
+        <th class="text-center">DATA DE NASCIMENTO</th>
+        <th class="text-center">JOGO</th>
+        <th class="text-center">EDITAR</th>
+        <th class="text-center">DELETAR</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="text-center">1</td>
+            <td class="text-center">Fodium</td>
+            <td class="text-center">25/09/1990</td>
+            <td class="text-center">PUBG</td>
+            <td class="text-center">
+                <a href="#">
+                    <i class="fa-solid fa-pencil"></i>
+                </a>
+            </td>
+            <td class="text-center">
+                <a href="#">
+                    <i class="fa-solid fa-trash"></i>
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td class="text-center">2</td>
+            <td class="text-center">Kitsune</td>
+            <td class="text-center">05/06/1993</td>
+            <td class="text-center">Poly Bridge</td>
+            <td class="text-center">
+                <a href="#">
+                    <i class="fa-solid fa-pencil"></i>
+                </a>
+            </td class="text-center">
+            <td class="text-center">
+                <a href="#">
+                    <i class="fa-solid fa-trash"></i>
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td class="text-center">3</td>
+            <td class="text-center">Perpectus</td>
+            <td class="text-center">11/11/1996</td>
+            <td class="text-center">Terraria</td>
+            <td class="text-center">
+                <a href="#">
+                    <i class="fa-solid fa-pencil"></i>
+                </a>
+            </td>
+            <td class="text-center">
+                <a href="#">
+                    <i class="fa-solid fa-trash"></i>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+{% endblock baseInterno %}
+
+
+{% block injectJS %}
+<script>
+    $(document).ready(function () {
+        $('#tabelaJogo').DataTable({
+            language: {
+                url: '//cdn.datatables.net/plug-ins/1.13.1/i18n/pt-BR.json'
+            }
+        });
+    });
+</script>
+{% endblock injectJS %}
