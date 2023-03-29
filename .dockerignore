@@ -1,0 +1,10 @@
+.gitignore
+README.md
+__pycache__/
+db.sqlite3
+venv/
+media/
+.vscode/
+staticfiles/
+0001_initial.py
+0002_initial.py

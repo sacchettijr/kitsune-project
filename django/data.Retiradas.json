@@ -1,0 +1,47 @@
+[
+    {
+        "model": "investimento.retiradamodel",
+        "pk": 1,
+        "fields": {
+            "investimento": 1,
+            "data_retirada": "2023-01-12",
+            "taxa_ganho": "0.01",
+            "taxa_tributo": "0.15",
+            "imposto": "1194.34",
+            "lucro_bruto": "7962.23",
+            "lucro_liquido": "6767.90",
+            "valor_final_b": "10462.23",
+            "valor_final_l": "9267.90"
+        }
+    },
+    {
+        "model": "investimento.retiradamodel",
+        "pk": 2,
+        "fields": {
+            "investimento": 4,
+            "data_retirada": "2020-01-13",
+            "taxa_ganho": "0.01",
+            "taxa_tributo": "0.15",
+            "imposto": "4680.42",
+            "lucro_bruto": "31202.83",
+            "lucro_liquido": "26522.40",
+            "valor_final_b": "41202.83",
+            "valor_final_l": "36522.40"
+        }
+    },
+    {
+        "model": "investimento.retiradamodel",
+        "pk": 3,
+        "fields": {
+            "investimento": 16,
+            "data_retirada": "2020-01-13",
+            "taxa_ganho": "0.01",
+            "taxa_tributo": "0.15",
+            "imposto": "4680.42",
+            "lucro_bruto": "31202.83",
+            "lucro_liquido": "26522.40",
+            "valor_final_b": "41202.83",
+            "valor_final_l": "36522.40"
+        }
+    }
+]

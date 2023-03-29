@@ -1,0 +1,62 @@
+[
+    {
+        "model": "usuario.usuariomodel",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$390000$gY8cMgFjjmfv8o9Vl3zr2O$leWgy3nMhZ2H9MvSm3ZmZ9DEEGmmvcn+PH4yUI8BXzI=",
+            "last_login": "2023-01-12T21:10:38.401Z",
+            "email": "sacchettif13@gmail.com",
+            "nome": "Sergio Sacchetti Junior",
+            "cpf_cnpj": "011.085.742-97",
+            "foto_perfil": "",
+            "saldo": "0.00",
+            "is_staff": true,
+            "is_active": true,
+            "is_superuser": true,
+            "is_anonymous": false,
+            "is_trusty": false,
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "usuario.usuariomodel",
+        "pk": 2,
+        "fields": {
+            "password": "pbkdf2_sha256$390000$G4VCHwkA4K8Vh4ADF7rNdE$18gz4Lm6QPv89mpZoivJmyETNuO3nacSUTRVih6p86E=",
+            "last_login": null,
+            "email": "kitsune@kitsune.com",
+            "nome": "Suki Kitsune Fujihara",
+            "cpf_cnpj": "098.138.990-26",
+            "foto_perfil": "",
+            "saldo": "0.00",
+            "is_staff": false,
+            "is_active": true,
+            "is_superuser": false,
+            "is_anonymous": false,
+            "is_trusty": false,
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "usuario.usuariomodel",
+        "pk": 3,
+        "fields": {
+            "password": "pbkdf2_sha256$390000$YjKK4JsoOUodP0BUujwkTY$5Gh13QivfUOJj+HM9ABr/WMnxfpwHgxZ/4qEZy57Nbo=",
+            "last_login": null,
+            "email": "fodium@kitsune.com",
+            "nome": "Igor Amorim",
+            "cpf_cnpj": "594.381.690-91",
+            "foto_perfil": "",
+            "saldo": "0.00",
+            "is_staff": false,
+            "is_active": true,
+            "is_superuser": false,
+            "is_anonymous": false,
+            "is_trusty": false,
+            "groups": [],
+            "user_permissions": []
+        }
+    }
+]

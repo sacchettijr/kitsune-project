@@ -1,0 +1,173 @@
+[
+    {
+        "model": "investimento.investimentomodel",
+        "pk": 1,
+        "fields": {
+            "proprietario": 1,
+            "valor_investido": "2500.00",
+            "data_investimento": "2000-01-01",
+            "meses_de_investimento": 276,
+            "status": true
+        }
+    },
+    {
+        "model": "investimento.investimentomodel",
+        "pk": 2,
+        "fields": {
+            "proprietario": 1,
+            "valor_investido": "1000.00",
+            "data_investimento": "1999-05-23",
+            "meses_de_investimento": 284,
+            "status": true
+        }
+    },
+    {
+        "model": "investimento.investimentomodel",
+        "pk": 3,
+        "fields": {
+            "proprietario": 3,
+            "valor_investido": "2000.00",
+            "data_investimento": "1980-08-23",
+            "meses_de_investimento": 0,
+            "status": true
+        }
+    },
+    {
+        "model": "investimento.investimentomodel",
+        "pk": 4,
+        "fields": {
+            "proprietario": 2,
+            "valor_investido": "10000.00",
+            "data_investimento": "2000-04-03",
+            "meses_de_investimento": 0,
+            "status": true
+        }
+    },
+    {
+        "model": "investimento.investimentomodel",
+        "pk": 5,
+        "fields": {
+            "proprietario": 1,
+            "valor_investido": "8900.99",
+            "data_investimento": "1995-11-11",
+            "meses_de_investimento": 0,
+            "status": true
+        }
+    },
+    {
+        "model": "investimento.investimentomodel",
+        "pk": 6,
+        "fields": {
+            "proprietario": 1,
+            "valor_investido": "35000.99",
+            "data_investimento": "2002-10-20",
+            "meses_de_investimento": 0,
+            "status": true
+        }
+    },
+    {
+        "model": "investimento.investimentomodel",
+        "pk": 7,
+        "fields": {
+            "proprietario": 1,
+            "valor_investido": "9999.99",
+            "data_investimento": "2010-01-20",
+            "meses_de_investimento": 0,
+            "status": true
+        }
+    },
+    {
+        "model": "investimento.investimentomodel",
+        "pk": 8,
+        "fields": {
+            "proprietario": 3,
+            "valor_investido": "35000.99",
+            "data_investimento": "2002-10-20",
+            "meses_de_investimento": 0,
+            "status": true
+        }
+    },
+    {
+        "model": "investimento.investimentomodel",
+        "pk": 9,
+        "fields": {
+            "proprietario": 2,
+            "valor_investido": "35000.99",
+            "data_investimento": "2002-10-20",
+            "meses_de_investimento": 0,
+            "status": true
+        }
+    },
+    {
+        "model": "investimento.investimentomodel",
+        "pk": 10,
+        "fields": {
+            "proprietario": 2,
+            "valor_investido": "800.99",
+            "data_investimento": "2000-01-20",
+            "meses_de_investimento": 0,
+            "status": true
+        }
+    },
+    {
+        "model": "investimento.investimentomodel",
+        "pk": 11,
+        "fields": {
+            "proprietario": 3,
+            "valor_investido": "35000.99",
+            "data_investimento": "2002-10-20",
+            "status": true
+        }
+    },
+    {
+        "model": "investimento.investimentomodel",
+        "pk": 12,
+        "fields": {
+            "proprietario": 2,
+            "valor_investido": "3000.00",
+            "data_investimento": "2000-01-18",
+            "status": true
+        }
+    },
+    {
+        "model": "investimento.investimentomodel",
+        "pk": 13,
+        "fields": {
+            "proprietario": 3,
+            "valor_investido": "35000.99",
+            "data_investimento": "2002-10-20",
+            "status": true
+        }
+    },
+    {
+        "model": "investimento.investimentomodel",
+        "pk": 14,
+        "fields": {
+            "proprietario": 3,
+            "valor_investido": "35000.99",
+            "data_investimento": "2002-10-20",
+            "status": true
+        }
+    },
+    {
+        "model": "investimento.investimentomodel",
+        "pk": 15,
+        "fields": {
+            "proprietario": 2,
+            "valor_investido": "35000.99",
+            "data_investimento": "2002-10-20",
+            "status": true
+        }
+    },
+    {
+        "model": "investimento.investimentomodel",
+        "pk": 16,
+        "fields": {
+            "proprietario": 2,
+            "valor_investido": "10000.00",
+            "data_investimento": "2000-04-03",
+            "meses_de_investimento": 0,
+            "status": true
+        }
+    }
+]

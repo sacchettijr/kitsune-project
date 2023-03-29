@@ -1,0 +1,93 @@
+{% extends 'base/base_interno.html' %}
+{% load static %}
+
+
+{% block baseInterno %}
+<div class="row mt-5">
+    <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12 col-xs-12 mt-2">
+
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Saldo bruto
+                        </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">
+                            R$ {{ total_bruto|floatformat:2 }}
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12 col-xs-12 mt-2">
+
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Saldo líquido
+                        </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">
+                            R$ {{ total_liquido|floatformat:2 }}
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12 col-xs-12 mt-2">
+
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Lucro Bruto
+                        </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">
+                            R$ {{ lucro_bruto|floatformat:2 }}
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12 col-xs-12 mt-2">
+
+        <div class="card border-left-success shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Lucro líquido
+                        </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">
+                            R$ {{ lucro_liquido|floatformat:2 }}
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock baseInterno %}

@@ -1,0 +1,170 @@
+version: "3.9"
+
+
+services:
+
+
+    #   Banco de dados
+    database:
+        container_name: kitsune_postgres
+        build: ./postgres/
+        restart: always
+        volumes:
+        - postgres:/data/postgres
+        env_file:
+        - .env
+        ports:
+        - "5432:5432"
+        networks:
+        - kitsune-backend
+
+
+    #   Acesso para o banco de dados
+    pgadmin:
+        container_name: kitsune_pgadmin
+        build: ./pgadmin/
+        restart: always
+        volumes:
+        - pgadmin:/var/lib/pgadmin
+        env_file:
+        - .env
+        ports:
+        - "5050:80"
+        depends_on:
+        - database
+        networks:
+        - kitsune-backend
+
+
+    #   Mensageiro que faz a comunicação de aplicações
+    rabbitmq:
+        container_name: kitsune_rabbitmq
+        build: ./rabbitmq/
+        volumes:
+        - rabbitmq:/var/lib/rabbitmq
+        env_file:
+        - .env
+        ports:
+        - "5672:5672"
+        - "15672:15672"
+        networks:
+        - kitsune-backend
+
+
+    #   Serviço de cache. Recebe os resultados do celery
+    redis:
+        container_name: kitsune_redis
+        build: ./redis/
+        restart: always
+        volumes:
+        - redis:/var/lib/redis
+        env_file:
+        - .env
+        ports:
+        - "6379:6379"
+        networks:
+        - kitsune-backend
+
+
+    #   Aplicação web
+    django:
+        container_name: kitsune_django
+        build: ./django/
+        command: ./run_django.sh
+        volumes:
+        - django:/usr/src/app
+        env_file:
+        - .env
+        environment:
+        - DJANGO_SECRET_KEY=django-insecure-fco=t7)rctncu0q$@mys**3xl%iox^u05%(2v^m1o&c80)d&ii
+        ports:
+        - "8000:8000"
+        depends_on:
+        - database
+        - redis
+        - rabbitmq
+        networks:
+        - kitsune-backend
+
+
+    #   Worker que gera processos para executar tarefas disponiveis
+    celery:
+        container_name: kitsune_celery
+        build: ./django/
+        restart: always
+        command: ./run_celery.sh
+        volumes:
+            - celery:/usr/src/app
+        env_file:
+            - .env
+        networks:
+            - kitsune-backend
+        depends_on:
+            - database
+            - rabbitmq
+            - redis
+            - django
+
+
+    #   Agenda os serviços dos workers
+    beat:
+        container_name: kitsune_beat
+        build: ./django/
+        command: "celery -A projeto beat -l info"
+        volumes:
+            - celery:/usr/src/app
+        env_file:
+            - .env
+        networks:
+            - kitsune-backend
+        depends_on:
+            - database
+            - django
+            - rabbitmq
+            - redis
+            - celery
+
+
+networks:
+    kitsune-backend:
+        driver: bridge
+
+
+volumes:
+    postgres:
+        driver: local
+    pgadmin:
+        driver: local
+    django:
+        driver: local
+    rabbitmq:
+        driver: local
+    redis:
+        driver: local
+    celery:
+        driver: local
+    
+
+
+  # #   Dashboard para monitorar os workers/tasks
+  # flower:
+  #     container_name: kitsune_flower
+  #     build: ./django/
+  #     image: mher/flower:latest
+  #     command: ./run_celery_flower.sh
+  #     ports:
+  #         - 5555:5555
+  #     env_file:
+  #         - .env
+  #     volumes:
+  #         - celery:/usr/src/app
+  #     networks:
+  #         - kitsune-backend
+  #     depends_on:
+  #         - django
+  #         - database
+  #         - rabbitmq
+  #         - redis
+  #         - celery
+
+

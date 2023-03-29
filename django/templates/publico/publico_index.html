@@ -1,0 +1,112 @@
+{% extends 'base/base_publico.html' %}
+{% load static %}
+
+{% block basePublico %}
+<main>
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">Venha investir com a gente</h1>
+                <p class="lead text-muted">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at elit leo. Cras lobortis velit sed
+                    commodo egestas. Suspendisse ligula ligula, eleifend rutrum posuere id, iaculis at nibh. Suspendisse
+                    vel nisl massa. Phasellus rhoncus eleifend lectus ac hendrerit. Praesent vitae feugiat turpis. Sed
+                    ultricies tempus tristique.
+                </p>
+
+                <a href="{% url 'signup' %}" class="btn btn-primary" role="button">Cadastre-se já!</a>
+                <br>
+                <small>
+                    <a href="{% url 'login' %}" class="" style="text-decoration: none;">Já possuo conta</a>
+                </small>
+
+
+            </div>
+        </div>
+        <div class="row mt-1 py-5">
+            <h3>Relatos dos nossos investidores</h3>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <div class="col">
+                    <div class="card shadow-sm" style="height: 100%;">
+                        <img src="{% static 'img/teste/teste_2.png' %}" alt="" class="card-img-top border shadow"
+                            style="height: 200px; width: 100%;">
+                        <div class="card-body">
+                            <h4>Igor Amorim</h4>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at elit leo. Cras lobortis
+                                velit sed commodo egestas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card shadow-sm" style="height: 100%;">
+                        <img src="{% static 'img/teste/teste_3.jpg' %}" alt="" class="card-img-top border shadow"
+                            style="height: 200px; width: 100%;">
+                        <div class="card-body">
+                            <h4>Suki Kitsune Fujihara</h4>
+                            <p>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi adipisci nostrum
+                                corrupti obcaecati voluptatum eos aliquam nisi et, itaque eius modi tempora, fuga ab hic
+                                praesentium est officia dolorem! At.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card shadow-sm" style="height: 100%;">
+                        <img src="{% static 'img/teste/teste_4.jpg' %}" alt="" class="card-img-top border shadow"
+                            style="height: 200px; width: 100%;">
+                        <div class="card-body">
+                            <h4>Sergio Sacchetti Junior</h4>
+                            <p>
+                                Massa
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card shadow-sm" style="height: 100%;">
+                        <img src="{% static 'img/teste/teste_5.jpg' %}" alt="" class="card-img-top border shadow"
+                            style="height: 200px; width: 100%;">
+                        <div class="card-body">
+                            <h4>Felipe Mattos Avalluse</h4>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi dolor velit accusamus
+                                nihil non eos consectetur sint ipsam magnam. Et numquam eum tenetur velit, non sequi.
+                                Neque libero blanditiis eveniet.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card shadow-sm" style="height: 100%;">
+                        <img src="{% static 'img/teste/teste_6.jpg' %}" alt="" class="card-img-top border shadow"
+                            style="height: 200px; width: 100%;">
+                        <div class="card-body">
+                            <h4>Daniel das gêmeas</h4>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at elit leo. Cras lobortis
+                                velit sed commodo egestas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card shadow-sm" style="height: 100%;">
+                        <img src="{% static 'img/teste/teste_7.png' %}" alt="" class="card-img-top border shadow"
+                            style="height: 200px; width: 100%;">
+                        <div class="card-body">
+                            <h4>Alicia Santos Nogueira</h4>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at elit leo. Cras lobortis
+                                velit sed commodo egestas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock basePublico %}

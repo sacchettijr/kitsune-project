@@ -1,0 +1,73 @@
+{% extends 'base/base_interno.html' %}
+{% load static %}
+
+
+{% block injectCSS %}
+<link href="{% static 'lib/sb-admin-2/vendor/datatables/dataTables.bootstrap4.min.css' %}" rel="stylesheet">
+{% endblock injectCSS %}
+
+
+{% block injectJS %}
+<!-- Page level plugins -->
+<script src="{% static 'lib/sb-admin-2/vendor/datatables/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'lib/sb-admin-2/vendor/datatables/dataTables.bootstrap4.min.js' %}"></script>
+<script>
+    $(document).ready(function () {
+        $('#tabelaIndex').DataTable({
+            language: {
+                url: "{% static 'lib/sb-admin-2/vendor/datatables/pt-br.json' %}"
+            }
+        });
+    });
+</script>
+{% endblock injectJS %}
+
+
+{% block baseInterno %}
+<div class="row mt-5">
+    <div class="col-12">
+        <h3 class="mb-3">Usuários cadastrados</h3>
+        <div class="table-responsive">
+            <table id="tabelaIndex" class="table table-sm table-hover table-striped table-bordered">
+                <thead class="thead-dark">
+                    <th scope="col" class="text-center">ID</th>
+                    <th scope="col" class="text-center">E-MAIL</th>
+                    <th scope="col" class="text-center">NOME COMPLETO</th>
+                    <th scope="col" class="text-center">CPF/CNPJ</th>
+                    <th scope="col" class="text-center">EQUIPE</th>
+                    <th scope="col" class="text-center">SUPERUSUÁRIO</th>
+                    <th scope="col" class="text-center">EDITAR</th>
+                    <th scope="col" class="text-center">DELETAR</th>
+                </thead>
+                <tbody>
+                    {% for usuario in object_list %}
+                    <tr>
+                        <th scope="row" class="text-center">{{ usuario.pk }}</th>
+                        <td class="text-center">
+                            <a href="#">
+                                {{ usuario.email }}
+                            </a>
+                        </td>
+                        <td class="text-center">{{ usuario.nome }}</td>
+                        <td class="text-center">{{ usuario.cpf_cnpj }}</td>
+                        <td class="text-center">{{ usuario.is_staff }}</td>
+                        <td class="text-center">{{ usuario.is_superuser }}</td>
+                        <td class="text-center">
+                            <a href="#">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                        </td>
+                        <td class="text-center">
+                            <a href="#">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<hr>
+{% endblock baseInterno %}

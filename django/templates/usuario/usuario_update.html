@@ -1,0 +1,48 @@
+{% extends 'base/base_interno.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+
+{% block injectJS %}
+<script src="{% static 'src/js/mascara.js' %}"></script>
+{% endblock injectJS %}
+
+{% block baseInterno %}
+<div class="row mt-5">
+    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mt-2">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% if form.non_field_errors %}
+            <div class="alert alert-danger" role="alert">
+                {% for error in form.non_field_errors %}
+                {{ error }}
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% if form.errors %}
+            {% for field in form %}
+            {% for error in field.errors %}
+            <div class="alert alert-danger">
+                <strong>{{ error|escape }}</strong>
+            </div>
+            {% endfor %}
+            {% endfor %}
+            {% endif %}
+            <div class="form-group">
+                <label for="id_nome">Nome completo:</label>
+                {{ form.nome|add_class:"form-control" }}
+            </div>
+            <div class="form-group">
+                <label for="id_cpf_cnpj">CPF/CNPJ:</label>
+                {{ form.cpf_cnpj|add_class:"form-control"|attr:"onpaste:return false" | attr:"ondrop:return false" }}
+            </div>
+            <div class="form-group">
+                <label for="id_foto_perfil">Foto de perfil:</label>
+                {{ form.foto_perfil|add_class:"form-control" }}
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Alterar</button>
+        </form>
+    </div>
+</div>
+{% endblock baseInterno %}

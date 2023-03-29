@@ -1,0 +1,44 @@
+{% extends 'base/base_interno.html' %}
+{% load static %}
+
+
+{% block baseInterno %}
+<div class="row mt-5">
+    <div class="col-xxl-8 col-xl-8 col-lg-6 col-md-12 col-sm-12 col-xs-12 mt-2">
+        <h3>Detalhe de usuário</h3>
+        <a href="{% url 'alterar_dados' %}" role="button" class="btn btn-primary">Alterar dados</a>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <td>Cód.</td>
+                        <td>{{ user.pk }}</td>
+                    </tr>
+                    <tr>
+                        <td>E-Mail</td>
+                        <td>{{ user.email }}</td>
+                    </tr>
+                    <tr>
+                        <td>Nome:</td>
+                        <td>{{ user.nome }}</td>
+                    </tr>
+                    <tr>
+                        <td>CPF/CNPJ</td>
+                        <td>{{ user.cpf_cnpj }}</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Saldo</td>
+                        <td>{{ user.saldo }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<tr>
+    <td></td>
+    <td>{{ user.foto_perfil }}</td>
+</tr>
+{% endblock baseInterno %}

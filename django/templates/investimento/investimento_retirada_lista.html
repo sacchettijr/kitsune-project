@@ -1,0 +1,63 @@
+{% extends 'base/base_interno.html' %} {% load static %} {% block injectCSS %}
+<link href="{% static 'lib/sb-admin-2/vendor/datatables/dataTables.bootstrap4.min.css' %}" rel="stylesheet" />
+{% endblock injectCSS %}
+{% block injectJS %}
+<!-- Page level plugins -->
+<script src="{% static 'lib/sb-admin-2/vendor/datatables/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'lib/sb-admin-2/vendor/datatables/dataTables.bootstrap4.min.js' %}"></script>
+<script>
+    $(document).ready(function () {
+        $("#tabela_retirada").DataTable({
+            language: {
+                url: "{% static 'lib/sb-admin-2/vendor/datatables/pt-br.json' %}",
+            },
+        });
+    });
+</script>
+{% endblock injectJS %}
+{% block baseInterno %}
+<div class="row mt-5">
+    <div class="col-12">
+        <h3 class="mb-3">Minhas retiradas</h3>
+        <div class="table-responsive">
+            <table id="tabela_retirada" class="table table-sm table-hover table-striped table-bordered">
+                <thead class="thead-dark">
+                    <th scope="col" class="text-center">ID</th>
+                    <th scope="col" class="text-center">INVESTIMENTO</th>
+                    <th scope="col" class="text-center">PROPRIETÁRIO</th>
+                    <th scope="col" class="text-center">DATA DE RETIRADA</th>
+                    <th scope="col" class="text-center">TAXA DO GANHO</th>
+                    <th scope="col" class="text-center">TAXA DE IMPOSTO</th>
+                    <th scope="col" class="text-center">VALOR DO IMPOSTO</th>
+                    <th scope="col" class="text-center">LUCRO BRUTO</th>
+                    <th scope="col" class="text-center">LUCRO LÍQUIDO</th>
+                    <th scope="col" class="text-center">VALOR FINAL BRUTO</th>
+                    <th scope="col" class="text-center">VALOR FINAL LÍQUIDO</th>
+
+                </thead>
+                <tbody>
+                    {% for retirada in object_list %}
+                    <tr>
+                        <th class="text-center" scope="row">{{ retirada.pk }}</th>
+                        <td class="text-center">{{ retirada.investimento.pk }}</td>
+                        <td class="text-center">
+                            ({{ retirada.investimento.proprietario.pk }})
+                            {{ retirada.investimento.proprietario.get_short_name }}
+                        </td>
+                        <td class="text-center">{{ retirada.data_retirada }}</td>
+                        <td class="text-center">{{ retirada.taxa_ganho }} %</td>
+                        <td class="text-center">{{ retirada.taxa_tributo }} %</td>
+                        <td class="text-center">{{ retirada.imposto }}</td>
+                        <td class="text-center">{{ retirada.lucro_bruto }}</td>
+                        <td class="text-center">{{ retirada.lucro_liquido }}</td>
+                        <td class="text-center">{{ retirada.valor_final_b }}</td>
+                        <td class="text-center">{{ retirada.valor_final_l }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<hr />
+{% endblock baseInterno %}

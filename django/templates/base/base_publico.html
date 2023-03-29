@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Igor Amorim, Sergio Sacchetti Junior, Suki Kitsune Fujihara">
+    
+    <title>Kitsune Project</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/favicon_io/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon_io/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicon_io/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'img/favicon_io/site.webmanifest' %}">
+
+    <link rel="stylesheet" href="{% static 'lib/bootstrap-5.2.3-dist/css/bootstrap.min.css' %}">
+    {% block injectCSS %}{% endblock injectCSS %}
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+        <div class="container-fluid">
+            <a href="{% url 'publico_index_view' %}" class="navbar-brand">
+                <i class="fas fa-cat" style="height: 30px;"></i>
+                &nbsp;
+                Kitsune Project
+            </a>
+        </div>
+    </nav>
+    {% block basePublico %}
+    {% endblock basePublico %}
+    <div class="footer mt-5 text-center border-top">
+        <small>
+            <p>
+                <div class="copyright">
+                    <span>Copyright &copy; KitsuneCode 2022</span>
+                </div>
+            </p>
+        </small>
+    </div>
+    <script src="{% static 'lib/bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'lib/fontawesome-free-6.2.1-web/js/all.min.js' %}"></script>
+    {% block injectJS %}{% endblock injectJS %}
+</body>
+</html>

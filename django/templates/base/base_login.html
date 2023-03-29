@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Igor Amorim, Sergio Sacchetti Junior, Suki Kitsune Fujihara">
+
+    <title>Kitsune Project</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/favicon_io/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon_io/android-chrome-192x192.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon_io/android-chrome-512x512.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon_io/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicon_io/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'img/favicon_io/site.webmanifest' %}">
+    <link rel="stylesheet" href="{% static 'lib/bootstrap-5.2.3-dist/css/bootstrap.min.css' %}">
+</head>
+
+<body class="bg-dark">
+
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-5">
+                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                    <div class="card-header">
+                        {% if msg_sucesso %}
+                        <div class="alert alert-success" role="alert">
+                            {{ msg_sucesso }}
+                        </div>
+                        {% endif %}
+                        <h3 class="text-center font-weight-light my-4">
+                            {% block baseLoginTitle %}
+                            Login
+                            {% endblock baseLoginTitle %}
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        {% block baseLoginBody %}
+
+                        {% endblock baseLoginBody %}
+                    </div>
+                    <div class="card-footer text-center py-3">
+                        <div class="small">
+                            <div class="justify-content-between d-flex px-3">
+                                {% block baseLoginFooter %}
+
+                                {% endblock baseLoginFooter %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="{% static 'lib/bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'lib/fontawesome-free-6.2.1-web/js/all.min.js' %}"></script>
+    {% block injectJS %}{% endblock injectJS %}
+</body>
+
+</html>

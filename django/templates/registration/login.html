@@ -1,0 +1,48 @@
+{% extends 'base/base_login.html' %}
+
+{% load static %}
+{% load widget_tweaks %}
+
+{% block classBody %} bg-dark {% endblock classBody %}
+
+{% block baseLoginTitle %}
+Login
+{% endblock baseLoginTitle %}
+
+{% block baseLoginBody %}
+<form method="post">
+    {% csrf_token %}
+    {% if form.errors %}
+    <div>
+        {% for error in form.non_field_errors %}
+        <div class="alert alert-danger">
+            {{ error }}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    <div class="form-group mt-3">
+        <label for="id_username">E-Mail</label>
+        {{ form.username|add_class:"form-control" }}
+        <small class="mt-1 text-danger">{{ form.username.errors }}</small>
+    </div>
+    <div class="form-group mt-2">
+        <label for="id_password">Senha:</label>
+        {{ form.password|add_class:"form-control" }}
+        <small class="mt-1 text-danger">{{ form.password.errors }}</small>
+    </div>
+    <div class="d-grid gap-2 col-12 mx-auto mt-3">
+        <button type="submit" class="btn btn-success">Entrar</button>
+    </div>
+</form>
+{% endblock baseLoginBody %}
+
+
+{% block baseLoginFooter %}
+<div class="col">
+    <a href="{% url 'signup' %}">Criar nova conta</a>
+</div>
+<div class="col">
+    <a href="{% url 'password_reset' %}">Esqueceu a senha?</a>
+</div>
+{% endblock baseLoginFooter %}

@@ -1,0 +1,11 @@
+kitsune/
+venv/
+db.sqlite3
+__pycache__/
+static/
+0001_initial.py
+0002_initial.py
+media/
+.vscode/
+staticfiles/
+.idea/

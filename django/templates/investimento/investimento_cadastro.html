@@ -1,0 +1,38 @@
+{% extends 'base/base_interno.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+
+{% block baseInterno %}
+<div class="row mt-5">
+    <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 mt-2">
+        <h3>Cadastro de investimento</h3>
+
+        
+        {% if form.non_field_errors %}
+        <div class="alert alert-danger" role="alert">
+            {% for error in form.non_field_errors %}
+            {{ error }}
+            {% endfor %}
+        </div>
+        {% endif %}
+
+
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="id_valor_investido">Valor investido:</label>
+                {{ form.valor_investido|add_class:"form-control" }}
+                <small class="mt-1 text-danger">{{ form.valor_investido.errors }}</small>
+            </div>
+            <div class="form-group">
+                <label for="id_data_investimento">Data do investimento:</label>
+                {{ form.data_investimento|add_class:"form-control" }}
+                <small class="mt-1 text-danger">{{ form.data_investimento.errors }}</small>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+        </form>
+    </div>
+</div>
+{% endblock baseInterno %}
